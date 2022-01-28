@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive_project/database/functions/db_functions.dart';
 import 'package:hive_project/ui_designs/Widgets/add_person_widget.dart';
 import 'package:hive_project/ui_designs/Widgets/list_person_widget.dart';
 
@@ -7,6 +8,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    getPerson();
     return Scaffold(
       appBar: AppBar(title: const Text("Hive Project Demo")),
       body: SafeArea(
@@ -22,5 +24,3 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
-
-

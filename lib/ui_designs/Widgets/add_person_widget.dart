@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hive_project/database/functions/db_functions.dart';
+import 'package:hive_project/database/models/data_models.dart';
 
 class AddPersonWidget extends StatelessWidget {
   AddPersonWidget({
@@ -47,6 +49,8 @@ class AddPersonWidget extends StatelessWidget {
       return;
     }
     // ignore: avoid_print
-    print('$_name $_age');
+    // print('$_name $_age');
+    final _perosn = PersonModel(age: _age, name: _name, );
+    addPerson(_perosn);
   }
 }
