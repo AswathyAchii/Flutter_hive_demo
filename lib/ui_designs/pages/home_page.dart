@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hive_project/ui_designs/Widgets/add_person_widget.dart';
+import 'package:hive_project/ui_designs/Widgets/list_person_widget.dart';
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
-  final _nameController = TextEditingController();
-  final _ageController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,33 +12,9 @@ class MyHomePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                children: [
-                  TextFormField(
-                    controller: _nameController,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Name',
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  TextFormField(
-                    controller: _ageController,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Age',
-                    ),
-                  ),
-                  const SizedBox(height: 30),
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.add),
-                    label: const Text("Add Person"),
-                  ),
-                ],
-              ),
+            AddPersonWidget(),
+            const Expanded(
+              child: ListPersonWidget(),
             )
           ],
         ),
@@ -46,3 +22,5 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+
+
