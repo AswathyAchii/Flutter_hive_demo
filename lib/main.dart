@@ -9,6 +9,7 @@ Future<void> main() async {
   await Hive.initFlutter();
   if (!Hive.isAdapterRegistered(PersonModelAdapter().typeId)) {
     Hive.registerAdapter(PersonModelAdapter());
+    
   }
 
   runApp(const MyApp());
