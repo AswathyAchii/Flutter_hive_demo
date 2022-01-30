@@ -48,9 +48,10 @@ class AddPersonWidget extends StatelessWidget {
     if (_name.isEmpty || _age.isEmpty) {
       return;
     }
-    // ignore: avoid_print
-    // print('$_name $_age');
-    final _perosn = PersonModel(age: _age, name: _name, );
+    final _perosn = PersonModel(
+      age: _age,
+      name: _name,
+    );
     addPerson(_perosn);
   }
 }

@@ -1,5 +1,3 @@
-// ignore_for_file: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
-
 import 'package:flutter/material.dart';
 
 import 'package:hive_project/database/models/data_models.dart';
@@ -27,6 +25,6 @@ Future<void> getPerson() async {
 
 Future<void> deletePerson(int id) async {
   final personDB = await Hive.openBox<PersonModel>('Person_db');
-  personDB.delete(id);
+  await personDB.delete(id);
   getPerson();
 }

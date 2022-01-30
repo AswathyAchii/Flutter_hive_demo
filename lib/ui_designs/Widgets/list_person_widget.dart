@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/adapters.dart';
 import 'package:hive_project/database/functions/db_functions.dart';
 import 'package:hive_project/database/models/data_models.dart';
 
@@ -21,8 +20,12 @@ class ListPersonWidget extends StatelessWidget {
               subtitle: Text(data.age),
               trailing: IconButton(
                 icon: const Icon(Icons.delete),
-                onPressed: () async {
-                 
+                onPressed: () {
+                  if (data.id != null) {
+                    deletePerson(data.id!);
+                  } else {
+                    print("Id is null");
+                  }
                 },
               ),
             );
